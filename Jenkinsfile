@@ -2,6 +2,9 @@ pipeline {
     agent {
         docker { image 'python:3.10' }
     }
+    options {
+        skipStagesAfterUnstable()
+    }
     stages {
         stage('Install Dependencies') {
             steps {
